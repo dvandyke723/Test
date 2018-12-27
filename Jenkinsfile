@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bat 'set'
+                retry(3) {
+                    bat 'set'
+                }
             }
         }
     }
