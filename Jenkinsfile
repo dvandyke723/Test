@@ -1,12 +1,20 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent any
     stages {
         stage('build') {
             steps {
                 retry(3) {
-                    bat 'set'
+                    bat 'echo "Testing"'
                 }
             }
         }
+    }
+}
+post {
+    success {
+        echo 'Success!'
+    }
+    failure {
+        echo 'Failure!'
     }
 }
