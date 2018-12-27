@@ -4,7 +4,21 @@ pipeline {
         stage('build') {
             steps {
                 retry(3) {
-                    bat 'echo "Testing"'
+                    bat 'echo "Building"'
+                }
+            }
+        }
+        stage('code quality') {
+            steps {
+                retry(3) {
+                    bat 'echo "Code Quality Test"'
+                }
+            }
+        }
+        stage('binary repository') {
+            steps {
+                retry(3) {
+                    bat 'echo "Adding to Binary Repository"'
                 }
             }
         }
