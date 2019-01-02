@@ -1,17 +1,21 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven'
+    }
     stages {
-        stage('build') {
-            steps {
-                retry(3) {
-                    bat 'echo "Building"'
-                }
-            }
-        }
         stage('code quality') {
             steps {
                 retry(3) {
                     bat 'echo "Code Quality Test"'
+                }
+            }
+        }
+        stage('build') {
+            steps {
+                retry(3) {
+                    bat 'echo "Building"'
+                    bat 'mvn --version'
                 }
             }
         }
