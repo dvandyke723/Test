@@ -8,7 +8,7 @@ pipeline {
         stage('code quality') {
             steps {
                 retry(3) {
-                    bat 'echo "Code Quality Test"'
+                    bat 'echo "Code Quality Test (SonarQube)"'
                     bat 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=365b9714ed23e75254b6098241bcf6a9c4fb2aee'
                 }
             }
@@ -16,7 +16,7 @@ pipeline {
         stage('build') {
             steps {
                 retry(3) {
-                    bat 'echo "Building"'
+                    bat 'echo "Building (Maven)"'
                     bat 'mvn --version'
                 }
             }
