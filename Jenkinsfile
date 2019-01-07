@@ -9,7 +9,7 @@ pipeline {
             steps {
                 retry(3) {
                     bat 'echo "Code Quality Test (SonarQube through Maven)"'
-                    bat 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=365b9714ed23e75254b6098241bcf6a9c4fb2aee'
+                    bat 'mvn -f d:/ApacheMaven_3.5.2/bin/my-app/pom.xml sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=365b9714ed23e75254b6098241bcf6a9c4fb2aee'
                 }
             }
         }
