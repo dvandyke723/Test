@@ -17,7 +17,7 @@ pipeline {
             steps {
                 retry(3) {
                     bat 'echo "Building (Maven)"'
-                    bat 'mvn package'
+                    bat 'mvn package -f d:/ApacheMaven_3.5.2/bin/my-app/pom.xml'
                 }
             }
         }
