@@ -24,7 +24,7 @@ pipeline {
         stage('binary repository') {
             steps {
                 retry(3) {
-                    bat 'echo "Adding to Binary Repository"'
+                    bat 'echo "Adding to Binary Repository (Nexus)"'
                     bat 'mvn clean deploy -f d:/ApacheMaven_3.5.2/bin/my-app/pom.xml'
                 }
             }
